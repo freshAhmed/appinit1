@@ -2,9 +2,9 @@
   "name": "appinit",
   "version": "0.0.1",
   "private": true,
-  "main": "app.js",
+  "main": "app.mjs",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon app.mjs",
     "test": "NODE_ENV=test mocha --recursive test",
     "test:coverage": "nyc npm test",
     "test:unit": "mocha --recursive test/middleware test/models test/routes",

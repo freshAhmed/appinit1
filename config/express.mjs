@@ -5,7 +5,7 @@ import body_parser from "body-parser"
 
 import compress from "compression"
 import { handle404,basicErrorHandler } from './appsupport.mjs';
-import  router from '../app/router.mjs'
+import  {router} from '../app/router.mjs'
 import exphbs from 'express-handlebars'
 
 export const Apphandler= (app, config) => {
