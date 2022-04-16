@@ -12,7 +12,7 @@ export const config = {
     app: {
       name: 'appinit'
     },
-    port: process.env.PORT || 12000,
+    port: process.env.PORT || 2000,
     db: 'mongodb://localhost/appinit-development'
   },
 
@@ -21,7 +21,7 @@ export const config = {
     app: {
       name: 'appinit'
     },
-    port: process.env.PORT ||12000,
+    port: process.env.PORT ||2000,
     db: 'mongodb://localhost/appinit-test'
   },
 
@@ -30,7 +30,7 @@ export const config = {
     app: {
       name: 'appinit'
     },
-    port: process.env.PORT || 12000,
+    port: process.env.PORT || 2000,
     db: 'mongodb://localhost/appinit-production'
   }
 };

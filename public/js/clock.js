@@ -70,8 +70,8 @@ this.draw()
 let canvas= new createcanvas(document.getElementById("canvas"));
 let margin=90;
 let radius=canvas.width/2-margin;
-let hand_truncation=canvas.width/115;
-let Hour_hand_truncation=canvas.width/110;   
+let hand_truncation=canvas.width/10;
+let Hour_hand_truncation=canvas.width/10;   
 let number_spacing=20;
 let fontheight=1;
 let minutes =80;
@@ -79,7 +79,7 @@ console.log(canvas.canvas.getBoundingClientRect().width,canvas.width)
 
 let hand_redious=radius-number_spacing;
 let circle= new createcircle(canvas.width/2,canvas.height/2,radius,canvas.context,"stroke");
-let centercircle= new createcircle(canvas.width/2,canvas.height/2,12,canvas.context,"fill");
+let centercircle= new createcircle(canvas.width/2,canvas.height/2,2,canvas.context,"fill");
 console.log(hand_redious)
 function drawhands(){
     let date=new Date();
@@ -90,7 +90,7 @@ function drawhands(){
     let handsecound=new Line(centercircle.x,centercircle.y,circle.x,circle.y,canvas.context);
 
 
-    handhour.update(hour*5+(date.getMinutes()/10)*5,true);
+    handhour.update(hour*60+(date.getMinutes()/24)*60,true);
     handminutes.update(date.getMinutes(),false);
     handsecound.update(date.getSeconds(),false);
 
@@ -117,20 +117,20 @@ let numberwidth=0;
 numberwidth=canvas.context.measureText(number).width;
 
 canvas.context.fillText(number,canvas.width/2+Math.cos(angle)*hand_redious-numberwidth/2,
-                               canvas.height/2+Math.sin(angle)*hand_redious+fontheight/3)
+                               canvas.height/2+Math.sin(angle)*hand_redious+fontheight/2)
 })
 
 let px=0,py=0,px1=0,py1=0;
 
-for(let n=0;n<Math.PI*2;n+=Math.PI/90){
-px=canvas.width+Math.cos(n*0.002)*radius/2
-py=canvas.height+Math.sin(n*0.002)*radius/12
-px1=canvas.width+Math.cos(n*2.5)*(radius)
-py1=canvas.height+Math.sin(n*2.5)*(radius)
+for(let n=0;n<Math.PI*112;n+=Math.PI/20){
+px=canvas.width+Math.cos(n*12)*radius/10.1
+py=canvas.height+Math.sin(n*21)*radius/10.1
+px1=canvas.width+Math.cos(n*21.5)*(radius/12)
+py1=canvas.height+Math.sin(n*21.5)*(radius/12)
 for(let i= 0; i <12 ;i++){
  
     canvas.context.beginPath();
-    canvas.context.moveTo(px/12,py/2)
+    canvas.context.moveTo(px/2,py/2)
     canvas.context.lineTo(px1/2,py1/2)
     canvas.context.stroke();
 
