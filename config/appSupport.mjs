@@ -37,5 +37,6 @@ export function onError(error){
 export function onListening(serve){
     const add =serve.address();
     const bind =typeof add.port=='string'?' Pipe '+add.port:' port '+add.port;
-    console.log(`server listening on ${bind}`);
+    
+    // console.log(`server listening on ${bind}`);
 }
